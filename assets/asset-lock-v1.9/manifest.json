@@ -1,0 +1,226 @@
+[
+  {
+    "id": "OBJ-01",
+    "title": "Bottle and wax variants",
+    "filename": "luxury_wine_bottle_wax_variants.png",
+    "status": "APPROVED",
+    "sha256": "c047194e80899ae475c33f87507cb932359df8457207b110511fe03ea869a8c9",
+    "notes": "Generic bottle; red/yellow/green wax only."
+  },
+  {
+    "id": "OBJ-02",
+    "title": "Bottle tags and wax coding",
+    "filename": "a_crisp_photoreal_stylized_3d_render_of_the_same.png",
+    "status": "APPROVED",
+    "sha256": "71aaf6d8a092790dacf3514f3cdf95a0ec8d28567d67c610df00173810fe664c",
+    "notes": "Use bottle and tag reference only; incidental background objects are not approved."
+  },
+  {
+    "id": "OBJ-03",
+    "title": "Oil-filled sensor",
+    "filename": "sealed_oil_sensor_package_with_battery.png",
+    "status": "APPROVED",
+    "sha256": "e334aade482acfe2bc4296dbb6f57493591800f16bae7d93b934dc541d81f04e",
+    "notes": "Narrow heat-sealed silver pouch, oil, PCB and cylindrical white/green battery."
+  },
+  {
+    "id": "OBJ-04",
+    "title": "Basket original",
+    "filename": "a_highly_realistic_studio_quality_3d_render_photo.png",
+    "status": "APPROVED",
+    "sha256": "b5a159e793da3316ceb96703fc781e44d60edeed572960e66d416e36ca275756",
+    "notes": "Brick red; 12 cells (3 x 4); 35 x 30 x 40 cm."
+  },
+  {
+    "id": "OBJ-04A",
+    "title": "Basket cutout",
+    "filename": "WML_Basket_Approved_Cutout.png",
+    "status": "APPROVED",
+    "sha256": "ac66a6d587a69f10b3b05aa645c19449e282b940eaeb60462922b4f446c83837",
+    "notes": "Existing compositing derivative of OBJ-04."
+  },
+  {
+    "id": "OBJ-05",
+    "title": "Polsinelli cage original",
+    "filename": "a_crisp_high_detail_realistic_product_style_3d_re.png",
+    "status": "APPROVED",
+    "sha256": "a0a23211cdcfc2918f1dbd8a7ce7556cdd9e3a077debb409d937ff6770fc6acd",
+    "notes": "128 x 90 x 110 cm external."
+  },
+  {
+    "id": "OBJ-05A",
+    "title": "Cage cutout",
+    "filename": "WML_Cage_Approved_Cutout.png",
+    "status": "APPROVED",
+    "sha256": "9c7af8ce1b04da8a116402d7c45f8ab9960c5461ff25f2e1f4706859eb15f77a",
+    "notes": "Existing compositing derivative of OBJ-05."
+  },
+  {
+    "id": "OBJ-06",
+    "title": "Sincera 2",
+    "filename": "sincera_2_bottle_sealing_machine.png",
+    "status": "APPROVED",
+    "sha256": "83e20cfeaa4c4dcfb1978548797ca5dd1f09ffe894f4a42925bb9f419b86415c",
+    "notes": "Use this exact machine."
+  },
+  {
+    "id": "OBJ-10",
+    "title": "Prep table",
+    "filename": "a_clean_isolated_product_rendering_on_a_transparen.png",
+    "status": "APPROVED",
+    "sha256": "ce1fafe051b09761525978cd5ca51d72b1b89913d86c356841fb759800faf017",
+    "notes": "Existing table approved in lab composition."
+  },
+  {
+    "id": "CHAR-01",
+    "title": "Five team characters — Bruno hair corrected",
+    "filename": "WML_Team_Bruno_Hair_Corrected.png",
+    "status": "SUPERSEDED",
+    "sha256": "263f9e28272b3f8072bf36da2760f3bb699331f533241bdc212e06dcda1262e8",
+    "notes": "Prior Bruno hair corrected lineup retained byte-identically as historical reference. Superseded for full-team staging by CHAR-03 (approved seven-person lineup, natural heights and Monica styling)."
+  },
+  {
+    "id": "CHAR-01-LEGACY",
+    "title": "Five team characters",
+    "filename": "WML_Team_Face_Restored.png",
+    "status": "SUPERSEDED",
+    "sha256": "5f7a80eded0801126fe64343d130d5c948528ccd4eadbccadfadd722df5df8ce",
+    "notes": "Preserve faces, clothing and body proportions; use independent approved props for future scenes. Superseded by approved Bruno short-hair correction; retained for history only."
+  },
+  {
+    "id": "ENV-01",
+    "title": "Fixed lab background",
+    "filename": "WML_Laboratory_Fixed_Environment.png",
+    "status": "APPROVED",
+    "sha256": "df9412195064068f319698050963f40c1d014381f0dcd57cfef8e73fee6f4a69",
+    "notes": "Preserve architecture and permanent equipment."
+  },
+  {
+    "id": "COMP-01",
+    "title": "Lab integrated composition",
+    "filename": "WML_Lab_06_Scale_Adjusted.png",
+    "status": "APPROVED",
+    "sha256": "90a06ce1b83c9175a0a4fcf5dd967ecfbc22c1e08293cd180cd5e01cfb2111d5",
+    "notes": "Existing composition after scale adjustment."
+  },
+  {
+    "id": "SCALE-01",
+    "title": "Scale reference",
+    "filename": "WML_P01_3_Scale_Reference.png",
+    "status": "APPROVED",
+    "sha256": "1d33607c39a3ee9efdc50f5f54b71c54e716ce7b14805e807a39ab1222657c15",
+    "notes": "Visual production scale only; estimated dimensions are not physical measurements. Relative human heights remain pending after team feedback."
+  },
+  {
+    "id": "ENV-02",
+    "title": "Scarlino aerial",
+    "filename": "a_wide_high_resolution_cinematic_aerial_oblique.png",
+    "status": "APPROVED",
+    "sha256": "4b93e0afd1bce34180d9c625eeb84b3c852566297a74b46aedfa68fb953e3228",
+    "notes": "Approximate stylized geographic reconstruction."
+  },
+  {
+    "id": "REF-01",
+    "title": "Real sensor photo",
+    "filename": "57ba33da-b28d-49de-9185-a52913153d7c.jpeg",
+    "status": "REFERENCE",
+    "sha256": "6342d4c7f259fa2872889b4e59322143420bb011839070964e4f59b2a5b557ac",
+    "notes": "Real reference photo; not an animated asset."
+  },
+  {
+    "id": "ENV-03",
+    "title": "Scarlino empty dock",
+    "filename": "sunny_mediterranean_marina_quay.png",
+    "status": "APPROVED",
+    "sha256": "ff44e1f83f766d6b4683bfff203d15de1d21cd1e0a3ecc4600f2f8a79b14b70e",
+    "notes": "Approved empty quay; approximate geography. Supersedes previous pending dock."
+  },
+  {
+    "id": "OBJ-07",
+    "title": "Marine workboat and crane",
+    "filename": "a_highly_detailed_photorealistic_cgi_style_render.png",
+    "status": "APPROVED",
+    "sha256": "389df233423e13a560c4d874638d38246ffe4a20ecbe2ad9e58faed3f08329e1",
+    "notes": "Approved second image, unloaded blue-hull white-wheelhouse workboat with blue crane. Visual reference only; dimensions, payload, crane rating and actual vessel unverified. Crane is part of this reference; separate technical validation remains open."
+  },
+  {
+    "id": "ENV-04",
+    "title": "Follonica open sea",
+    "filename": "a_wide_realistic_high_resolution_seascape_view_o.png",
+    "status": "APPROVED",
+    "sha256": "da0004b39b64f302ff72c9849b9e02f89080be8572f7dbfdb84d19fd468604d1",
+    "notes": "Approved empty open-sea view; approximate coastline reconstruction, not a surveyed location."
+  },
+  {
+    "id": "ENV-05",
+    "title": "Underwater environment — 30 m",
+    "filename": "a_wide_cinematic_underwater_seafloor_scene_viewe.png",
+    "status": "APPROVED",
+    "sha256": "208c3460139f85c33a10fc065b1cc85a7043058c7237e585179152c4f6d6da98",
+    "notes": "Approved empty underwater background at target depth 30 m. Artistically reconstructed lighting and rocky seabed; actual site visibility and substrate not surveyed."
+  },
+  {
+    "id": "REF-02",
+    "title": "Existing underwater concept video",
+    "filename": "5bd78f42-3be7-4b53-8038-8d64e39af8b9.mp4",
+    "status": "REFERENCE",
+    "sha256": "e73ea166f952833e448f95b38c33c274c609f85f6d08b13dd253d67bbca04024",
+    "notes": "Existing 10-second AI-generated clip; candidate ending/reference only. Review equipment continuity before final reuse; not footage of actual deployment."
+  },
+  {
+    "id": "COMP-02",
+    "title": "Dock — empty cages",
+    "filename": "TIRAMISU_Dock_01_Empty_Cages.png",
+    "status": "APPROVED",
+    "sha256": "7111b1ebaf55a4d25472a036986e794952fa662e03fa0690661ebcd2f2261977",
+    "notes": "Approved empty-cage dock composition; count and placement illustrative."
+  },
+  {
+    "id": "COMP-03",
+    "title": "Dock — corrected filled cages",
+    "filename": "TIRAMISU_Dock_02_Interior_Cages_Corrected.png",
+    "status": "APPROVED",
+    "sha256": "60e73ca59932c083aa291b5956964d47ee1dd9fc7747d9989f4ce8b0f20f2448",
+    "notes": "Approved corrected 2D composition with baskets behind cage mesh. Supersedes rejected filled-cage draft; actual loading arrangement not verified."
+  },
+  {
+    "id": "COMP-04",
+    "title": "Dock — workboat and filled cages",
+    "filename": "harbor_workboat_and_bottle_cages.png",
+    "status": "APPROVED",
+    "sha256": "6c757fe8938d24fd77564d50f30203bc3bf333a87d076f7f7e148ffbb659306d",
+    "notes": "User-approved generated scene reference. Not a byte-identical composite of individual assets; does not supersede locked equipment sources. Vessel, lifting capacity and actual loading arrangements unverified."
+  },
+  {
+    "id": "CHAR-02",
+    "title": "Project managers — Angela and Fabrizio",
+    "filename": "TIRAMISU_Angela_Fabrizio_Approved.png",
+    "status": "APPROVED",
+    "sha256": "13fdc8eb3d466c8a4142e73f153bae2071c2ea30a6b0de47d64000ce60587775",
+    "notes": "Exact approved two-person studio sheet. Both project managers participate in operational scenes. Preserve appearance and clothing."
+  },
+  {
+    "id": "COMP-05",
+    "title": "Dock — seven-character placement",
+    "filename": "TIRAMISU_Dock_04_Seven_Character_Placement.png",
+    "status": "APPROVED",
+    "sha256": "156784d044289e4025b12f80b582be52a293bc320e36f34e29e354148be10c32",
+    "notes": "User-approved 2D staging of the seven-person cast on the approved dock/workboat scene. Not an animated or rigged asset; poses and operational safety arrangements remain subject to shot planning. CHAR-01 and CHAR-02 remain authoritative. Historical approved staging; must be revised for the new Bruno reference, common ground line and relative heights before final production. Historical approved staging composition; use CHAR-03 as authoritative seven-person lineup for current body proportions and styling."
+  },
+  {
+    "id": "CHAR-03",
+    "title": "Seven characters — approved full-body scaled lineup",
+    "filename": "TIRAMISU_Seven_Characters_Scale_Approved.png",
+    "status": "APPROVED",
+    "sha256": "382a1e9eca859b652c85e83517d23bcf9f6508b2ef36c0f3bd8cceebb576eaaf",
+    "notes": "Exact user-approved seven-person image. Kamran height is 187 cm and approximately the same range as Nicola. Monica and Michela noticeably shorter. All seven on common floor line. Do not regenerate or alter faces, clothing, props or bodies without new review. Absolute heights of others unverified. Current authoritative team lineup."
+  },
+  {
+    "id": "BRAND-01",
+    "title": "Official Wine Management Logistics logo",
+    "filename": "wml-wine-and-sea-aging-logo.png",
+    "status": "APPROVED",
+    "sha256": "641f0cd689208acdae9ecaeae3441cc0a26151cca3db54ef0c191b3fc74f9ec8",
+    "notes": "Original user-provided artwork. No modifications. Use in software introduction only; spoken/displayed product name Wine Management; preserve original wording inside artwork."
+  }
+]

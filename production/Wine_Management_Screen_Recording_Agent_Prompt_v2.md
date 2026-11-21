@@ -1,0 +1,46 @@
+# Wine Management — real application screen recording (TIRAMISU S05-F)
+
+## Objective
+Create a clean, presentation-quality screen recording of the **actual Wine Management application** for the five-minute animated TIRAMISU introduction to the project board. The recording must start from the real application login page, show a legitimate successful sign-in, and then navigate through the key dashboard modules and the physical bottle → basket → cage traceability workflow. The result is source footage for editing, not a generated UI mockup or an automated test report.
+
+## Phase 1 — Discovery and access
+- Inspect the existing repository, current deployed/approved application version, available UI routes and user-visible capabilities. Reuse the existing application; do not generate a replacement interface or assume route names. Record the version/commit if verifiable without exposing infrastructure details.
+- Use a designated authorized account, preferably read-only and preferably an existing demo/staging environment with representative safe data. If using the actual project environment, obtain authorization for the displayed data and do not mutate business records. Do not create or seed demo data in production.
+- Respect the INFN VPN requirement and the separate application authentication. Use an already authorized network/session or request the operator's help if needed. Do not change VPN, authentication, permissions, firewall, deployment settings or secrets to make recording possible. Do not bypass login, MFA, or other security controls.
+- Record the login page with blank fields; pause/stop recording while the operator enters credentials and completes MFA. Resume at a safe point for the sign-in action if the fields are safe to display, or cut directly to the successful dashboard transition. Never record passwords (even briefly), usernames/emails if sensitive, OTPs, tokens, internal URLs/IPs, cookies, secret files or private records. Do not print secrets in logs or reports. Do not store unredacted authentication footage.
+- If a valid login, safe representative records, or authorization is unavailable, stop the affected step and report it as blocked. Do not fake success.
+
+## Phase 2 — Capture the real UI
+Use an actual desktop browser (Playwright/Chromium or existing authorized screen recording tools if appropriate) with a clean 1920×1080 content viewport if supported. Target 30 fps; use a higher resolution if practical, but no artificial upscaling claims. Record the application content only, without terminal, browser bookmarks, address bar, DevTools, notifications, test overlays, or other unrelated windows. Retain the app's existing styling and language. No generated UI, fake cursor clicks, or simulated records. Use deliberate cursor movements, no unnecessary scrolling, and allow each screen to settle before holding it for 3–5 seconds. Target 2–4 minutes of source footage, not including retries or credential entry. Record separate usable segments in addition to a continuous walkthrough where safe.
+
+| Clip | Priority | What to show |
+|---|---|---|
+| 01_login | Required | Actual login page, official branding if present, authorized successful transition (credentials off-record). |
+| 02_dashboard | Required | Landing overview and main navigation; meaningful live or explicitly labeled demo counts. |
+| 03_wines | If available | Wine list and a representative wine detail, producer/type or other actual fields. |
+| 04_bottle_traceability | Required if available | Search for an existing safe bottle by its actual TagID; open its details; show associated wine, optional sensor and basket/cage relationships where present. Do not invent an ID or force missing links. |
+| 05_baskets | Required if available | Open an existing basket, its BasketID and collection/sampling round; show actual bottle contents and occupancy. |
+| 06_cage_visualization | High priority | Open the existing visual cage/plane interface; show cage ID, contained baskets, colored bottle caps, sensor markers, occupancy or integrity only where these are implemented. Switch planes if available and meaningful. |
+| 07_sensors | If available | Sensor pool or sensor data, association with a bottle; display a representative recorded pressure history only if data exists and is approved for presentation. Never imply real-time underwater connectivity without verification. |
+| 08_withdrawals | If available | Show the sampling/withdrawal plan or recorded history in a read-only view. No withdrawal, deployment or status-changing action. |
+| 09_chemical_analysis | Planned — do not capture | Not implemented. Explain in the editorial roadmap only: proposed linkage of chemical analysis results to samples and comparison of sea-aged wines with cellar controls. Do not open an unfinished module, create a mockup or imply availability. |
+| 10_basket_reports | Required if safely accessible | Capture the actual implemented basket report preview or read-only report view using approved records. Cage reports are not implemented; do not capture or generate them. Mention cage reports only as planned development. Do not export confidential records or modify anything. |
+
+Capture no chemical analysis or cage-report footage, even if a placeholder navigation entry exists. The user has confirmed these features are not ready. Report them as PLANNED / NOT CAPTURED, rather than as a recording failure. Capture basket reports separately from cage visualization.
+
+Where possible, use one consistent actual example across clips 04–06 and 10 so the viewer can follow a single bottle through the same basket and cage. The current experimental protocol (10 November 2026, v1) defines 12 bottles per basket (6+6 from two wine types), 9 baskets in each main cage, and 9 main cages; these are protocol values, not a license to change or misrepresent the records currently displayed. Distinguish physical capacity from actual occupancy. If the data does not match the protocol, report the discrepancy and avoid presenting misleading values. Do not invent missing functionality or claim that a demonstration record represents the actual experiment.
+
+## Phase 3 — Deliverables
+Create a local output folder outside the application repository (or an explicitly approved ignored directory): `wine-management-screen-recording/`.
+- `Wine_Management_Full_Walkthrough.mp4` — clean continuous walkthrough with safe edits if necessary.
+- `clips/01_login.mp4` through available `clips/10_basket_reports.mp4` (no clip 09; planned module) — individually named clips; omissions explained in report. Preserve sufficient clean handles at the beginning/end for editing. Save original safe recordings if possible; never retain raw secrets.
+- `Wine_Management_S05_UI_Cut.mp4` — optional proposed 17-second silent UI montage: login 3 s, overview 2 s, bottle traceability 4 s, cage visualization 4 s, basket report 4 s. The original logo card will occupy the preceding 3 seconds in the film, making S05-F exactly 20 seconds. Do not burn in narration, music, subtitles, transitions or extra branding. Prefer a clear cut over cramming every module into the short montage. Keep the chemical analysis and cage-report roadmap for the editorial voiceover only; do not show simulated UI. The montage timing is proposed and can be adjusted in editing.
+- `capture_manifest.md` — environment type, verified version, resolution, FPS, durations, actual module/route names (omit private hostnames), timestamp ranges, record/demo status, successful captures, omitted/blocked modules, any visible anonymization and confirmation of business-data read-only operation. List each output file and SHA-256.
+
+Use H.264 MP4 with broadly compatible yuv420p output where available; preserve original resolution/aspect ratio, consistent frame rate, and smooth cursor movement. If the capture format is WebM, convert only after recording; retain safe originals. Validate every delivered MP4 using ffprobe or equivalent and visually review the login transition and selected clips for confidentiality, legibility, loading artifacts, blank frames, and accuracy. Report actual encoded properties, not requested settings if different.
+
+## Non-negotiable boundaries
+No code changes, database writes or deletions, migrations, seed operations, configuration changes, restarts, deployments, commits or pushes for this capture task. Normal authorized login/session handling and associated routine audit events are permitted; no other mutations. Read-only navigation and search only. If a desired function does not exist in the active build, skip it and state why. Do not fix or implement features just to produce the footage. Do not capture sensitive user/producer data, security dashboards, infrastructure info or credentials. Do not modify the official logo. For editorial title/narration use **Wine Management**; the supplied artwork may retain its complete WML / Wine Management Logistics text.
+
+## Completion report
+Return actual paths to the completed video files, a short module-by-module pass/skip list, actual recording duration and format, whether the login-to-dashboard workflow succeeded, and blockers, if any. Explicitly state whether production business data, repository files and deployment settings remained unchanged. Do not claim completion if no playable video was produced.
