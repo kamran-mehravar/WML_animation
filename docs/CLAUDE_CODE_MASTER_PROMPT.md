@@ -353,3 +353,115 @@ Assemble S01 into a single playable video, perform QA, and present that sequence
 Then continue through Batches B–E using the same orchestrated workflow.
 
 **Your job is to produce the film. Do not let the workflow collapse into endless asset-preparation microtasks.**
+
+
+---
+
+# LOCAL COMPUTE AUTHORIZATION OVERRIDE — 2026-11-21
+
+The owner now explicitly authorizes use of **their own workstation compute resources** for this animation project.
+
+This section overrides earlier CLOUD-ONLY prohibitions.
+
+## Allowed local resources
+
+Claude Code may use:
+- local GPU(s)
+- CPU
+- RAM
+- local disk
+- ffmpeg / ffprobe
+- Python virtual environments
+- Docker/containers if already available or safe to install
+- Blender
+- ComfyUI or equivalent local node-based inference runtimes
+- locally downloaded open-weight image/video models
+- local scripts for rendering, compositing, QA, frame extraction, interpolation, upscaling, subtitles and final encoding
+
+## Safety boundaries
+
+Claude MUST:
+- work inside the WML animation project directory or a clearly isolated environment;
+- never modify unrelated repositories, system services, production applications or databases;
+- never expose ComfyUI/Jupyter/Blender render services to the public internet;
+- bind local web UIs to localhost unless the owner explicitly requests otherwise;
+- never disable firewall/security controls;
+- avoid sudo unless genuinely necessary; explain each privileged change before doing it;
+- never delete original approved assets; derived files must use new filenames;
+- never overwrite production captures;
+- keep credentials, VPN configuration and private data out of logs and Git;
+- keep the GitHub repo privacy state in mind and use Git LFS for large media when appropriate;
+- record installed dependencies, model versions and exact commands for reproducibility.
+
+## First action: hardware and environment audit
+
+Run and record appropriate diagnostics, including:
+- OS / kernel
+- GPU vendor/model(s)
+- VRAM
+- driver/runtime versions
+- CUDA/ROCm/Metal availability as applicable
+- system RAM
+- free disk space
+- Python version
+- ffmpeg/ffprobe
+- Blender
+- Docker
+- existing ComfyUI or inference environments
+
+Write results to `docs/RENDER_ENVIRONMENT.md`.
+
+Do NOT download large model weights until hardware compatibility and free disk space have been checked.
+
+## Model / pipeline selection
+
+Choose the best local open-weight workflow that actually fits the detected hardware.
+
+Prioritize:
+1. reference-consistent image-to-video / video-to-video;
+2. identity preservation for the seven approved characters;
+3. stable geometry and camera motion;
+4. reusable character/environment references;
+5. cost-free local inference once model weights are installed.
+
+Possible categories include ComfyUI workflows, open-weight video models, Blender-assisted shots, frame interpolation/upscaling and hybrid compositing.
+
+Do not force one model across the whole film. Use different local tools where appropriate.
+
+## Production strategy
+
+Do NOT return to one-image-at-a-time micro-approval.
+
+Build reusable assets once:
+- seven-character identity/reference pack;
+- approved laboratory masters;
+- Scarlino dock;
+- workboat/crane;
+- sea surface;
+- underwater 30 m environment.
+
+Work in batches:
+- Batch A: S01–S02
+- Batch B: S03–S04
+- Batch C: S05 real Wine Management screen recording + roadmap
+- Batch D: S06–S07
+- Batch E: S08–S09 + final institutional banner
+
+Generate actual motion shots locally, perform automatic QA, repair failing shots, then assemble each batch into a playable MP4.
+
+## Immediate task
+
+1. Audit the workstation.
+2. Select the most suitable local pipeline for the detected GPU.
+3. Create a reproducible isolated environment.
+4. Use the approved lab reference and character assets.
+5. Produce the complete S01 sequence locally.
+6. Save:
+   - `video/drafts/S01_complete_v1.mp4`
+   - first/middle/last QA frames for every generated shot
+   - generation settings and seeds where applicable
+   - `docs/SHOT_QA.md`
+   - `docs/PROGRESS.md`
+7. Probe every output with ffprobe before claiming success.
+
+The owner wants the actual film produced using local compute, not another setup guide. Proceed autonomously unless a destructive/system-wide change, large download, or missing indispensable source requires approval.
