@@ -1,104 +1,187 @@
-# Claude Code — Master Production Prompt for TIRAMISÙ / Wine Management Animation
+# CLAUDE MASTER PROMPT — CLOUD-ONLY ANIMATION PRODUCTION
+## TIRAMISÙ scientific film / Wine Management | 2026-11-21
 
-You are the lead technical director, AI-video pipeline engineer, editor, and QA supervisor for the **TIRAMISÙ / Wine Management** animation project. Execute this task on the user's local GPU workstation, preferably using working free/open-source tools. **Produce actual render files; do not stop after writing an implementation plan.** Do not fake progress, fabricate finished clips, or quietly substitute a slideshow for 3D motion.
+### MANDATORY EXECUTION MODE
 
-## 0. Mission and data discovery
+You are acting as the **production director, cloud animation orchestrator, editor, narrator coordinator, continuity supervisor, and delivery manager** for a professional animated film about the TIRAMISÙ scientific wine-aging project and the real **Wine Management** application.
 
-Primary repo: `https://github.com/kamran-mehravar/WML_animation.git`.
+**I want actual produced animation, not another script, plan, storyboards-only deliverable or static-image slideshow. Start generating real motion shots with tools available in YOUR cloud environment.**
 
-Read, in this order:
-1. `README.md`
-2. `docs/PRODUCTION_SPEC.md`
-3. `docs/SCENE_MATRIX.md`
-4. `docs/ASSET_POLICY.md`
-5. `docs/CLOUD_ANIMATION_HANDOFF.md`
-6. The approved image assets / storyboard DOCX and PNG files **if actually present locally**
-7. The authoritative **Protocollo prelievo Tiramisu (1).pdf**, dated 10 Nov 2026, if accessible
-8. The footage and metadata `Wine_Management_Full_Walkthrough.mp4`, `TIRAMISU_S05_Wine_Management_Full_Demo_Silent.mp4`, `capture_manifest.md`, if accessible.
+**HARD PROHIBITION: DO NOT use or require any compute resources on my own workstation.** Specifically:
+- Do not use my local GPU, CPU, RAM, disk, ComfyUI, Blender install, shell or workstation runtimes.
+- Do not use SSH, remote desktop, VS Code remote, port forwarding, or any mechanism to execute on my machine.
+- Do not ask me to install models, run scripts, download checkpoints, paste commands into a local terminal, or run `nvidia-smi`.
+- Do not silently fall back to my computer if your cloud tools fail.
+- You MAY use a cloud computer, a remote execution environment and connected image/video-generation services genuinely available to you, subject to permissions and cost rules below.
+- Do not claim Claude's text model itself automatically has unlimited video-rendering compute. **Discover your available actions and providers first, then invoke them.** A description of a theoretical tool is not execution.
 
-**CRITICAL:** The repo initially only had text documentation committed; the 168 MB project handoff ZIP and binary assets may NOT be available in GitHub. Do not claim you saw missing assets. Check whether a folder `WML_animation_handoff/` has already been extracted, or search only sensible user-approved local paths. The locally recorded demo may be at:
-`/home/kamran/Documents/Local_Project/wine-management-screen-recording/`.
-Do not assume a ChatGPT `sandbox:/` or `/mnt/data/` path is available on this workstation. If key files are missing, record exact missing filenames in `docs/ASSET_INVENTORY.md`, keep developing the runnable pipeline, and ask for the minimum missing files only when absolutely blocked. Do not invent replacement photos, characters, institutional logos or UI footage.
+If your current environment lacks a working way to generate video or edit files, **say exactly what cloud tool, integration or entitlement is missing**. Do not fabricate MP4s. Offer the smallest specific cloud-side action that unblocks it. Do not turn this into local-GPU setup instructions.
 
-## 1. Detect hardware and choose a no-subscription workflow
+### 1 — SOURCE ACCESS AND VERIFICATION (DO THIS FIRST)
 
-Inspect OS, available GPU(s), VRAM, disk, CUDA/ROCm/Metal, RAM, Python, ffmpeg/ffprobe, Blender and available local video generation runtimes. Suggested diagnostics: `nvidia-smi` if NVIDIA; `rocminfo` if AMD; platform equivalents otherwise. Record results in `docs/RENDER_ENVIRONMENT.md`.
+GitHub repository:
+`https://github.com/kamran-mehravar/WML_animation`
 
-Select an **actually compatible** workflow after verifying model requirements with official documentation, possibly ComfyUI + an open-weight image-to-video model, LTX-Video, Wan 2.x, another viable local model, and Blender for exact geometry where generative tools fail. Do not assume any model works at a guessed VRAM capacity. Use lower resolutions / frame counts for prototype tests, then upscale/render final masters if viable. Do not pay for cloud services, add credits, expose a GPU server publicly, or transfer restricted footage to a cloud service without explicit permission. Use local compute by default.
+Read these repo files, in order:
+- `README.md`
+- `docs/PRODUCTION_SPEC.md`
+- `docs/SCENE_MATRIX.md`
+- `docs/ASSET_POLICY.md`
+- `docs/CLOUD_ANIMATION_HANDOFF.md`
+- `docs/UPLOAD_STATUS.md`
 
-Set up reproducible environments, pinned dependencies, versioned ComfyUI workflows or generation scripts and a resumable shot queue. Preserve the user's pre-existing software and GPU configuration; use venv/containers.
+**IMPORTANT:** Text documentation is in GitHub, but the complete original source media may **not be there**. A previous handoff ZIP and the project images/video were prepared in a different chat environment; a file's name in GitHub documentation does **not** grant access to its bytes. You must inspect your actual connected file access.
 
-## 2. Story, timing and canonical research facts
+Require original approved sources, not AI substitutes:
+1. Latest approved visual asset set, **Visual Asset Lock v1.9** (approved 7-character lineup; finalized Bruno/Monica; laboratory; Sincera 2 waxing equipment; 12-slot terracotta basket; galvanized cage; workboat/crane; Scarlino dock and aerial; open sea; underwater 30 m; verified bottle/wax/tag/sensor oil pouch assets).
+2. All nine scene storyboard reference images and the final editable S01–S09 shot-list DOCX documents, including revised S05 v5 and S09 v2.
+3. The **10 November 2026 Protocollo prelievo Tiramisu v1 PDF** (the current scientific protocol).
+4. **Original, unchanged institutional partner banner** `wine-management-banner-topbar.png`.
+5. **Original WML software logo** `wml-wine-and-sea-aging-logo.png`.
+6. The real Production app recording `Wine_Management_Full_Walkthrough.mp4` (225.53 sec) and/or `TIRAMISU_S05_Wine_Management_Full_Demo_Silent.mp4` (~243.53 sec with logo and future-roadmap slate), plus `capture_manifest.md`.
+7. Any user-approved real reference photos or videos required to match physical equipment.
 
-Aim for about **09:03.533**, Full HD 1920×1080, 30 fps, H.264 final. Longer runtime is acceptable only if speech and clarity genuinely require it.
+Make a machine-readable inventory `ASSET_INVENTORY.csv`: verified accessible path/ID, source role, file type, SHA-256 where available, approved vs reference vs rejected, privacy designation. **Do not mark a source "available" without successfully opening it.**
 
-- **S01 00:00–00:35:** enter approved laboratory, 18 types of wine × 108 bottles; the team appreciates how prior meetings/tagging/process design prepared them. Characters: Monica, Nicola, Kamran voice-over.
-- **S02 00:35–01:15:** identify bottles and plan groups: 54 sea samples + 54 cellar controls per wine; tag/ID organization.
-- **S03 01:15–02:00:** wax seal, physical serial tags, pressure sensor preparation/programming, correctly slender **oil-filled sealed sensor bags**; Monica, Nicola, Bruno, Michela.
-- **S04 02:00–02:30:** fill **terracotta physical 12-slot baskets**, 6 bottles of wine A + 6 bottles of wine B, attach yellow basket withdrawal number tags, register digital mapping. **No cages in laboratory.**
-- **S05 02:30–07:23.533:** from data complexity to **Wine Management**. Show official WML logo **only as software reveal** (at about 03:20 for 3 seconds), then use **all 225.53 seconds of the original real read-only application walkthrough**, followed by approx. 15 seconds of roadmap. Explain the actual navigation and example records as the footage appears; not just a 20-second teaser.
-- **S06 07:23.533–07:38.533:** move prepared **baskets only by vehicle** from the lab to Scarlino.
-- **S07 07:38.533–08:03.533:** at Scarlino, read yellow basket withdrawal tags and place baskets in their matching cages. Angela/Fabrizio coordinate.
-- **S08 08:03.533–08:23.533:** specialist-operated crane loads secured cages onto the approved workboat.
-- **S09 08:23.533–09:03.533:** sail from Scarlino toward the deployment area, lower cages under controlled conditions, 30 m target underwater depth, use approved Mediterranean seafloor mood, finish with the institutional partner banner.
+If sources are missing, request the **full project handoff archive and original Production footage via Claude's file upload, connected cloud storage, or private project files**. Do not ask me to run code locally. Do not substitute arbitrary generated characters, cages, baskets, logos or fake UI for missing sources. You can develop shot prompts and a cloud-native pipeline while waiting for genuinely indispensable missing bytes.
 
-10 Nov 2026 protocol: **18 wine types, 1,944 bottles overall, 972 sea bottles; 9 withdrawal rounds; 9 wine pairs × 9 withdrawal baskets = 81 sea baskets; 9 main sea cages; 9 baskets × 12 bottles = 108 per main cage.** These are planned experiment counts, not a statement that current Production DB is fully populated. The old `Vini e Prelievi` four-bottle scheme is **obsolete**; never use it.
+### 2 — CLOUD TOOLS AND COST CONTROL
 
-The actual software example: **Bottle Y214407** (Wine `TOS_1A`, sensor `K034`) → **Basket Y214500** (12/12, 6×`TOS_1A` + 6×`TOS_1B`, Withdraw 1) → **Cage cage-01**, Plane 1. In its present database, 9 cages exist but only 12 baskets have been placed in cages; cage-01 has 6. UI displays physical capacity 6/16 basket slots; do **not** confuse with the planned protocol's 9 baskets/cage. Actual basket reports work. **Chemical Analysis, Cage Reports and historical pressure telemetry are future/planned**, and must NOT be depicted as implemented.
+Discover and use your available tools for:
+- **image-to-video and video-to-video** (real scene motion, preferably with multiple consistent reference frames / character references);
+- cloud file storage, cloud video editing / rendering, compositing and audio;
+- video inspection, extracting representative frames, FPS/duration/codec checks, and transcription/timeline alignment;
+- reliable Italian voice-over / subtitles, if offered.
 
-## 3. Locked visual identities: do not redraw arbitrarily
+Examples of suitable tool categories: connected video-generation applications, cloud browser/computer, hosted notebook/media processing, or other genuinely executable cloud tools. Choose the best available tools **based on real access**, not tool names you assume exist.
 
-Use `assets/approved/` and latest locked archive v1.9 as canonical when available, not historical drafts. Seven characters: **Bruno, Monica, Kamran, Michela, Nicola, Angela, Fabrizio**.
-- Bruno: short dark hair, glasses, correct finalized look; sensor/firmware and database architecture support.
-- Monica: approved refined silhouette/outfit, shorter stature, team management and wax/tag.
-- Kamran: black T-shirt, glasses/beard in approved render, height **187 cm**, close in height to tall Nicola; software/database engineering.
-- Michela: relatively short, tag/sensor sleeve with oil.
-- Nicola: tall, curly hair/moustache, wax/tag operations.
-- Angela and Fabrizio: approved project manager look, coordinate on dock.
+**Prioritize included/free credits and available tools.** Before any billable job, subscription, credit purchase, paid plan, or uploading restricted Production data to a third-party cloud service not already authorized, ask for authorization **with the concrete amount/provider and what will be uploaded**. Do not spend without approval. Record model, provider, job ID, credits used if known, timestamp and output reference for each job.
 
-Keep people on the **same ground line** in group shots with plausible height differences. Character outfits/faces must not drift. Preserve 35×30×40 cm 12-bottle terracotta baskets, user-approved open-top galvanized cage, approved wax machine `Sincera 2`, stainless lab tanks, tiled floor, Scarlino harbor/workboat/crane, and environmental assets. No WML brand painted on physical equipment, clothing, cages or baskets.
+### 3 — PURPOSE, STYLE AND TECHNICAL TARGET
 
-Film style: high-quality **professional stylized 3D**, not children’s cartoon and not fully photorealistic. Maintain bottle proportions, correct colored wax/tag geometry, correct oil-filled sensor sleeve scale; no urine-bag appearance.
+Create a polished **~9-minute professional 3D-style animation / scientific product documentary**, for the project's board. Not childish, not fully photorealistic. Use Italian narration/dialogue, with optional English subtitles. Target final export: **1920×1080, 30 fps, H.264 MP4**, soundtrack and clean titles. The total duration may change moderately for natural speech and editing; no arbitrary 5-minute maximum.
 
-## 4. Branding: two DIFFERENT brands
+Consistency is crucial: the same seven approved characters, exact faces, proportions, clothing, wax colors, tags, physical baskets, cages, machine, harbor, boat and locations. Keep the user's approved visual composition as the canonical reference. The visual sources are reference frames; they are NOT finished animation.
 
-1. **WML software logo**: `brand/software/wml-wine-and-sea-aging-logo.png` or the approved equivalent. Use at the software reveal only. Narration calls the software **“Wine Management”**, not “WML”.
-2. **Institutional partner strip**: `brand/institutional/wine-management-banner-topbar.png` or the exact approved original showing Interreg / EU / TIRAMISÙ / INFN Pisa / University of Pisa. Composite the original in the **top-left** across film **except S05 software introduction/demonstration**. On the last shot the **SAME** original institutional strip animates from small top-left into a **large centered** readable end-card. **Do not put WML logo on end-card and do not re-render or alter institutional logos.**
+**Rejected technique:** Ken Burns 2D pan/zoom or static picture movement pretending to be 3D. Earlier S01-A looked like a shaky slideshow and was rejected. Require **real perspective/parallax / genuinely coherent scene motion**, smooth stabilized dolly/pan movements, natural character gestures and physical interactions. Reject camera shake, flicker, jitter, face drift, object morphing, changing props, impossible hands, and logo corruption.
 
-## 5. Sound/voice
+### 4 — SCIENTIFIC OPERATING TRUTH
 
-Follow Italian dialogue and narration in each S01–S09 Word shot list. Use `docs/SCENE_MATRIX.md` as the routing summary, not as replacement for available approved scripts. Propose natural Italian voice-over as character/dialogue audio tracks and optional English subtitles, carefully timed to visuals. Do not clone identifiable real people's voices without permission; neutral synthetic narrator voice or licensed/locally available TTS is acceptable, or leave marked VO tracks/placeholders if voices aren't yet provided. Mix background and environmental sound tastefully, keep real Production walkthrough footage unmodified except deliberate reframing/redaction-safe editing.
+Use ONLY the 10 November 2026 protocol for current allocation/counts, not older '4 bottles per basket' material.
 
-## 6. Video quality requirement
+- 18 wine types × 108 bottles per type = 1,944 bottles.
+- 54 sea + 54 cellar controls per wine type.
+- Main sea study: **9 scheduled withdrawal rounds**, **9 wine-type pairs**.
+- Each terracotta basket has exactly **12 bottle positions: 6 bottles of wine A + 6 of wine B**.
+- **81 sea baskets** and **9 main cages**, planned **9 baskets / 108 bottles per cage**; group baskets by the **withdrawal number**.
+- In the **LABORATORY**, bottle waxing, tagging, sensor sleeves, and **loading bottles into baskets** happen. **NO CAGES are loaded in the laboratory.**
+- Transport **baskets in a vehicle** to **SCARLINO**.
+- At **SCARLINO**, read each basket's yellow withdrawal tag and place each basket into the correspondingly assigned cage.
+- Crane team handles cages onto the appropriate workboat at the dock; boat goes to offshore operation; deployment to **30 m underwater**.
+- Do not turn a storyboarding lift into an asserted certified lift plan; actual crane and vessel ratings need real-world confirmation.
 
-**The old opening failed** because it was a 2D Ken Burns pan/zoom with visible jitter. The new opening must show genuine depth cues / parallax or correctly rendered 3D camera motion. No moving photograph disguised as an animation, no jitter/flicker, frame-to-frame geometry warping, changing characters, or unreadable text.
+Tag meanings established by the project: green for sea-designated bottles, blue for cellar controls, yellow for sensor-bearing bottles and basket labels; red for another experimental grouping. Refer to the current approved artwork and protocol for scene-specific tags. Wax seals must be correctly proportioned and sensors enclosed in **thin, oil-filled, sealed sleeves**, not big empty fluid bags.
 
-Begin with **one 6–8 second S01-A camera-motion pilot** using the real approved lab frame as reference:
-- Dolly forward at slow speed, minimal lateral move, tripod/gimbal stable, correct foreground/background parallax.
-- Consistent table, sealing equipment, walls, tanks, floor and lighting.
-- No characters or new objects in this first test.
-- Produce playable MP4, first/middle/last QA images and a written approval checklist.
-- If local generative image-to-video cannot preserve geometry, use an actual Blender 3D reconstruction/camera or hybrid to enforce geometry. Do not mark a failed clip as completed.
+### 5 — SEVEN LOCKED CHARACTERS
 
-After the pilot passes QA, systematically produce S01 through S09 as smaller separately versioned shot files, validate them, and assemble the film.
+Keep facial identity, body proportions, clothing and scale from the approved latest visual character sheet:
+- **Nicola:** tall, waxing and bottle tagging.
+- **Michela:** relatively short, tagging and filling/sealing oil pouches for sensors.
+- **Kamran:** height **187 cm**, roughly the height range of Nicola, software/database engineering, tag and sensor checks.
+- **Monica:** relatively short, coordinated team management, waxing/tagging, refined silhouette/outfit as last approved.
+- **Bruno:** final approved **short hair**, glasses; sensor firmware/programming, database architecture/design with Kamran.
+- **Angela and Fabrizio:** original individually approved project-manager characters; present at Scarlino operational coordination.
 
-## 7. Deliverables, autonomy, and reporting
+In group compositions everybody stands on the **same ground plane**, no accidental front/back height distortion. Avoid restoring older rejected designs or changing persons' appearances between shots.
 
-Create in the repo or local private workspace:
-`pipeline/` (runnable generation/edit scripts and configs);
-`workflows/` (saved model/ComfyUI workflows);
-`docs/ASSET_INVENTORY.md`, `docs/RENDER_ENVIRONMENT.md`, `docs/SHOT_QA.md`, `docs/PROGRESS.md`;
-`video/drafts/S01A_test.mp4`, scene shot exports and contact sheets;
-`edit/` (editable NLE/OTIO/FFmpeg timeline or Blender sequence, recorded ffmpeg commands);
-`audio/` (Italian voice-over/mix or explicit placeholders);
-`subtitles/` (English SRT where available);
-`deliverables/TIRAMISU_Film_1080p30.mp4` for a verified final render;
-and manifests with SHA-256 hashes.
+### 6 — FILM BRANDING (DO NOT CONFUSE THE TWO IMAGES)
 
-Start working immediately: (a) verify available repo/assets and compute, (b) create a missing-assets report and reproducible environment, (c) produce the actual S01-A pilot if reference and compute permit, (d) perform quality checks and proceed scene by scene. Make sensible decisions autonomously. Ask the user only for irreducible blocked input, paid service authorization, cloud disclosure permission, or project-wide creative changes. At each checkpoint accurately report **real files created and their full paths**, remaining blockers and commands to reproduce. Never claim an MP4 exists until you have rendered and opened or probed it.
+There are two DIFFERENT original supplied graphic assets:
 
-## 8. Privacy and GitHub
+**A. Software-only brand:** the original **WML / Wine Management Logistics** logo. Speak the software name **“Wine Management”**, not only the abbreviation WML. Reveal its original logo at the start of the real software segment around 03:20.
 
-Check repo visibility **at the time of writing**. Assume public until verified otherwise. Do not push confidential portrait photos, research PDFs, production app video or private operator/network details into a public repository. Keep them in gitignored `restricted/`, never expose credentials in output. Push only non-sensitive pipeline/source/docs/approved publishable renders (after checking rights), with meaningful commits. Do not change repo visibility, production databases, application code or deploy settings without permission. Git LFS for large media in private repos. **Never overwrite approved image files.**
+**B. Institutional project banner:** the exact original strip showing the project and partner organizations (Interreg, TIRAMISÙ, INFN Pisa and University of Pisa). This banner is a small, persistent **TOP-LEFT overlay** throughout the animation **except during the S05 software-introduction/walkthrough segment**. At the VERY END, animate that same banner from small at top-left → moving and growing → large and centered, as the final title/end card. **Never replace it with the WML software logo.** Do not draw text or recreate either logo with an AI image model; composite exact original pixels / vector source.
 
-**Execute now. The intended outcome is the film and an executable project, not another abstract storyboard.**
+### 7 — CANONICAL S01–S09 STORYLINE AND TIMING
+
+Use the detailed existing shot lists as authoritative for camera actions and final Italian dialogue; the following is a summary and approximate edit map.
+
+| Scene | Timecode | What to animate or insert |
+|---|---|---|
+| S01 | 00:00–00:35 | Professional animated lab arrival. Huge number of wine bottles. Monica/Nicola discuss organization. Kamran says they see how valuable prior meetings, tagging decisions and process engineering have been. |
+| S02 | 00:35–01:15 | Bottle ID planning; 54 sea vs 54 controls per wine, unique tags, group into 6+6 pairs. |
+| S03 | 01:15–02:00 | Nicola/Monica wax bottles and apply tags; Bruno engineers sensors; Michela fills **oil sleeves** and seals them. |
+| S04 | 02:00–02:30 | Put 12 bottles (6+6) into **12-cell terracotta baskets**; attach withdrawal yellow labels. Cages do not appear in the lab. |
+| S05 | 02:30–07:23.533 | Narrative explains why the team designed Wine Management; display real application's **full original walkthrough** (~225.53 s) with matching detailed Italian commentary; end with roadmap-only slate (~15 s). |
+| S06 | 07:23.533–07:38.533 | Vehicle transports sealed/tagged baskets to Scarlino. **No cages in car.** |
+| S07 | 07:38.533–08:03.533 | At Scarlino, Angela/Fabrizio supervise sorting by yellow withdrawal number and cage assignment, e.g. basket for withdrawal 1 goes to cage for withdrawal 1. |
+| S08 | 08:03.533–08:23.533 | Final checks then specialist-operated crane loads cages onto approved workboat. |
+| S09 | 08:23.533–09:03.533 | Boat departure, lowering into sea, underwater environment at 30 m; future withdrawals; final **institutional partner banner** enlarges into center. |
+
+### REAL application capture, not fabricated UI
+
+S05 must show authentic UI navigation and explain the real traceability case:
+
+**Y214407** bottle → wine **TOS_1A** → basket **Y214500** (12/12, 6×TOS_1A + 6×TOS_1B, Withdrawal 1) → **cage-01** (Plane 1) → sensor **K034**.
+
+The existing Production recording is authorized for this presentation and has relevant sensitive fields blurred. Do not re-create it with an AI text-to-video generator; **insert the real captured MP4**. Retain protections; do not unblur UI or accidentally leak network addresses/username.
+
+Distinguish CURRENT database from PLANNED protocol: UI at recording time shows **9 cages, 12 currently installed baskets, cage-01 6 baskets, and a physical capacity model of 16 basket positions/cage**. The scientific plan says **9 planned baskets per main cage**. Those are not contradictory statements of the same quantity. Do not claim the software already contains all 81 planned sea baskets in the cages.
+
+Already functional: basket distribution reports. Future/planned only: Chemical Analysis integration, cage reports, historical pressure readings. No fake implemented feature screens or live underwater measurements.
+
+### 8 — START REAL PRODUCTION NOW: CLOUD PILOT FIRST
+
+**Step A: Verify source image and video access.** Open the exact locked lab image and compare it with the approved character/equipment set. Check that the institutional banner and WML logo are distinct.
+
+**Step B: Create one real 6–8 second S01-A cloud-generated image-to-video sample** before spending resources on all nine scenes:
+- Start from the actual **approved laboratory image**, preferably the approved master lab plate, not an invented replacement.
+- Slow smooth stabilized dolly forward with minimal side movement and visible depth-aware parallax.
+- Accurate table, tanks, Sincera 2 wax machine, doors, flooring and lighting with no object/room changes.
+- No characters, extra objects or text/logos in the raw video; official banner will be composited in editing.
+- Target landscape 16:9; prefer 1080p30 if offered within available allowance. If only lower quality is free, clearly label it as a pilot.
+- Save playable MP4, stills at first/middle/last frame, source references, generation settings, and quality report.
+- Watch / inspect the result. If still flat, shaky, or morphing, **reject it rather than telling me it is fine**.
+
+**Step C: After a valid pilot, create all additional S01–S04 and S06–S09 shots** in modular 5–12-second shots with continuity checks. Use several reference images where supported; for characters use reference-consistency or video-to-video identity control if available. Use genuine cloud video generation and cloud compositing (not local compute).
+
+**Step D: Assemble S05 using the real 225.53-second walkthrough** with Italian commentary aligned to the exact panel navigation, sample trace chain, honest roadmap. Keep confidential overlays/redaction.
+
+**Step E: Composite the exact partner banner and approved software logo in their proper segments**, mix dialogue/sound and optional subtitles, render final 1080p30 MP4 if cloud tools permit.
+
+### 9 — OUTPUTS, DELIVERY AND HONEST REPORTING
+
+Use your available cloud artifact storage or connected provider project space. Organize:
+
+```text
+TIRAMISU_ANIMATION/
+  00_source_manifest/
+  01_locked_references/
+  02_shots/S01/...S09/
+  03_software_recording/
+  04_audio_it/
+  05_subtitles_en/
+  06_edit_project/
+  07_qa/
+  08_final/
+```
+
+Deliver these as **actual accessible cloud files or downloadable attachments**:
+1. First approved-motion candidate: `S01A_cloud_pilot.mp4` and 3 QA frames.
+2. Shot videos for each scene and generation parameters.
+3. An editable cloud editing project/timeline (or portable EDL/OTIO/XML plus references).
+4. Italian VO audio (or an explicit statement of what is not yet supplied/available), optional English SRT.
+5. `TIRAMISU_Film_Final_1080p30.mp4` when truly rendered.
+6. Short `PRODUCTION_REPORT.md` with verified status, links, scene duration, renderer/provider, failures and any unresolved items.
+
+Use actual returned file IDs/URLs; never fabricate download links or imply an async render is complete before it has finished. Verify any final file by opening or probing it. Do not stop at giving me a prompt/plan if actual tools can produce the shot.
+
+### 10 — SECURITY AND VERSION CONTROL
+
+The GitHub repository was **PUBLIC** on last inspection. Confirm visibility and permissions again before any upload. Do not push original team portraits, Production walkthroughs, internal project PDFs or private user content to a public repo. Do not send them to any unapproved third-party provider, and do not upload credentials/VPN tokens/network configurations anywhere. Keep restricted source materials in appropriate private cloud storage (not my local PC); upload only if I authorize the specific destination and content.
+
+Do not modify the production Wine Management app, database, code or deployed settings. No production writes, commits to unrelated projects or deploying changes. Do not purchase cloud credits or paid subscriptions without my specific approval.
+
+### EXECUTE
+
+Read the repo documentation and discover the real tools you can invoke. Produce the first verified **cloud-generated S01-A video** if assets and permitted cloud compute are available. Then proceed scene-by-scene toward the full film. If blocked, tell me **which exact source file, cloud tool or permission** is missing, plus the single smallest action that allows you to resume. **My computer and GPU are off-limits for this phase.**
