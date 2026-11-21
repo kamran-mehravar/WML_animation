@@ -185,3 +185,171 @@ Do not modify the production Wine Management app, database, code or deployed set
 ### EXECUTE
 
 Read the repo documentation and discover the real tools you can invoke. Produce the first verified **cloud-generated S01-A video** if assets and permitted cloud compute are available. Then proceed scene-by-scene toward the full film. If blocked, tell me **which exact source file, cloud tool or permission** is missing, plus the single smallest action that allows you to resume. **My computer and GPU are off-limits for this phase.**
+
+
+---
+
+# PRODUCTION MODE OVERRIDE — MULTI-TOOL ORCHESTRATION, NOT ONE-SHOT MICROMANAGEMENT
+
+This section overrides any workflow that causes unnecessary per-shot/per-image approval loops.
+
+## Core directive
+
+You are **NOT** a single-model operator and you are **NOT** limited to Figma Weave, Veo, Kling, Nano Banana, or any one provider.
+
+Act as a **cloud production orchestrator**. Discover every video/image/editing/compositing/cloud-compute capability actually available in your environment and use the best combination for the job.
+
+The objective is the **complete film**, not endless preparation of individual still plates.
+
+You may combine, where genuinely available:
+- multi-shot / storyboard-to-video generation;
+- reference-to-video and image-to-video;
+- video-to-video identity/style stabilization;
+- character-reference generation;
+- image editing/inpainting;
+- cloud 3D rendering;
+- cloud browser/computer tools;
+- cloud notebooks or media-processing runtimes;
+- ffmpeg / Python for assembly, compositing, frame-rate conversion, QA and exports;
+- external connected apps for animation, editing, speech, subtitles and sound;
+- real source video for the Wine Management UI segment.
+
+Do not assume one provider is the default. If one provider is blocked by credits, egress restrictions, model availability, file-download restrictions, identity drift, or poor geometry preservation, **switch tools or redesign the pipeline instead of stalling the project**.
+
+## Stop producing everything as isolated 8-second experiments
+
+The film may be rendered internally as multiple clips because generative video models have duration limits, but production must be managed as **scene sequences**, not as a user-facing stream of tiny approvals.
+
+Group work into production batches:
+
+- Batch A: S01–S02
+- Batch B: S03–S04
+- Batch C: S05 real software segment + roadmap
+- Batch D: S06–S07
+- Batch E: S08–S09 + final institutional end card
+
+Within each batch:
+1. prepare all required references;
+2. choose the most appropriate generation/editing tool per shot;
+3. render the complete group of shots;
+4. perform automatic QA;
+5. repair/re-render only failing shots;
+6. assemble a playable sequence;
+7. present the **assembled batch video** for review.
+
+Do not require owner sign-off for every intermediate still unless:
+- a character identity materially changes;
+- a new third-party service needs personal likeness upload authorization;
+- a paid generation exceeds the currently approved budget;
+- a scientific/creative decision would alter the canonical story.
+
+## Use longer / multi-shot generation when available
+
+If your connected tools support multi-shot, storyboard-driven, reference-consistent, or longer-form video generation, prefer those capabilities over manual one-image-at-a-time workflows.
+
+For example:
+- generate a connected 20–40 second S01 sequence with multiple planned camera/action beats if the tool supports consistent multi-shot references;
+- use character references for Monica/Nicola rather than rebuilding their bodies manually from cutout fragments;
+- use video-to-video or reference-to-video for continuity when a good first clip exists;
+- use compositing only for exact logos/UI/assets that generative video must not redraw.
+
+Do **not** interpret “generate the whole animation” as “send a 9-minute text prompt to one model and hope for a coherent film.” Use professional orchestration: longer scene generation where supported, modular clips where necessary, then cloud editing into one continuous film.
+
+## Automatic tool discovery is mandatory
+
+Before declaring a blocker:
+1. enumerate available connected tools/apps/capabilities;
+2. inspect their supported generation modes and limits;
+3. check whether another tool can perform the blocked operation;
+4. check whether a cloud browser/computer can retrieve or transfer the output;
+5. check whether a cloud media runtime can ingest the output URL;
+6. only then report a genuine blocker.
+
+Do not stop because `blobs.figma.com` is blocked if another connected tool can receive the asset, if direct upload works, or if another provider can generate the shot without that dependency.
+
+Do not ask the user to enable domains, install software, use their workstation, or manually shuttle every output unless no cloud-native alternative exists.
+
+## Cost management: ask once per batch, not once per image
+
+Do not repeatedly ask permission for 11 credits here and 55 credits there.
+
+For each production batch:
+- calculate a **maximum estimated credit/cost envelope** across all required tools;
+- list provider/model choices and fallback options;
+- ask for one approval for that batch only if billable spend is required;
+- stay within the approved cap;
+- use free/included options first when quality is adequate;
+- record actual spend per job.
+
+Never purchase subscriptions or credits without explicit approval.
+
+## Character workflow
+
+Do not manually disassemble and rotate limbs from the lineup unless no generative reference-editing tool exists.
+
+For Monica, Nicola, Kamran, Michela, Bruno, Angela and Fabrizio:
+- use approved character images as identity references;
+- prefer reference-consistent image/video models;
+- make prop-free pose variants in one controlled character-preparation stage;
+- produce a reusable **character pack** (front / 3-quarter / side / relaxed neutral / working pose) once;
+- reuse that pack across S01–S09.
+
+This avoids paying repeatedly for the same identity preparation.
+
+## Environment workflow
+
+Prepare reusable environment masters once:
+- laboratory empty establishing view;
+- laboratory with prep table + Sincera 2 + bottle cases;
+- Scarlino dock;
+- workboat/crane;
+- sea surface;
+- 30 m underwater scene.
+
+Do not regenerate environments from scratch for every shot.
+
+## Editing-first mindset
+
+The final film is an **edited production**, not one monolithic generation.
+
+Use the best generated material, real UI capture, exact branding, narration, subtitles and music, then assemble them in a cloud editing timeline.
+
+Maintain:
+- master timeline;
+- shot IDs;
+- handles for transitions;
+- consistent frame rate strategy;
+- exact institutional banner overlay;
+- exact WML software logo only in the software segment;
+- synchronized Italian VO and optional English subtitles.
+
+## Autonomy requirement
+
+Do not send the user status reports after every small action.
+
+Continue working autonomously until one of these checkpoints:
+- an entire batch is assembled and playable;
+- a real privacy/cost authorization is required;
+- an indispensable source file is missing;
+- all available tools have genuinely failed.
+
+At a checkpoint, report:
+- playable batch output;
+- shots passed/failed;
+- actual spend;
+- what tool was used for each shot;
+- only the decisions that genuinely need user input.
+
+## Immediate next action
+
+Do not spend more time manually editing Monica/Nicola cutouts one by one unless that is objectively the best tool path.
+
+Reassess all available cloud tools now.
+
+Build a reusable character-reference pack using the best available image/reference-edit tool, then generate **the entire S01 sequence** as a coherent batch using the strongest available multi-shot/reference video workflow.
+
+Assemble S01 into a single playable video, perform QA, and present that sequence — not another isolated first-frame plate.
+
+Then continue through Batches B–E using the same orchestrated workflow.
+
+**Your job is to produce the film. Do not let the workflow collapse into endless asset-preparation microtasks.**
