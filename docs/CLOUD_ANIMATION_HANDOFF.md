@@ -1,3 +1,5 @@
+> **CURRENT EXECUTION POLICY — CLOUD ONLY (2026-11-21):** The owner explicitly prohibits using their own workstation, local GPU, or local runtime for the present production phase. Any legacy instructions below mentioning local NVIDIA/ComfyUI/Blender hardware are archived contingency notes and **MUST NOT** be executed. The authoritative master instruction is [CLAUDE_CODE_MASTER_PROMPT.md](./CLAUDE_CODE_MASTER_PROMPT.md). Generate on genuinely accessible Claude-connected cloud computing or video services, after asset and cost/permission checks.
+
 # Cloud/Local GPU Production Handoff
 
 ## Required input sources
